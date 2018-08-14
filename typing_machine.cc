@@ -89,13 +89,13 @@ std::string TypingMachine::Print(char separator) {
 
 	if (mStrLen > 0) {
 		Node *node = mStartNode;
-		if (mCursor == nullptr && separator != 0)
+		if ((mCursor == nullptr) && (separator != 0))
 			sResult += separator;
 
 		while (node != nullptr) {
 			if(node->GetData() != 0) 
 				sResult += node->GetData();
-			if (node == mCursor && separator != 0)
+			if ((node == mCursor) && (separator != 0))
 				sResult += separator;
 			node = node->GetNextNode();
 		}
